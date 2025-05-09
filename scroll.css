@@ -1,0 +1,66 @@
+body {
+    background-color: black;
+    color: white;
+    padding: 0;
+    margin: 0;   
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+div {
+    max-width: 800px;
+    padding: 2rem;
+
+}
+
+img {
+    width: 100%;
+    height: auto;
+    scale: 0.8;
+    opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: 250px 500px;
+}
+
+.scroll-watcher {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 100vw;
+    height: 5px;
+    padding:0;
+    background-color: red;
+    z-index: 1000;
+    transform-origin: left;
+    scale: 0 1;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+    to {
+        scale: 1 1;
+    }
+}
+
+@keyframes fade-in {
+    to {
+    scale: 1;
+    opacity: 1;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.show {
+    opacity: 1;
+}
